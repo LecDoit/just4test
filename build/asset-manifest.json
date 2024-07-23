@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:635567ecad31616dd4e5d478389273c0aea265e63f0ef3662fc6625b5d876928
-size 404
+{
+  "files": {
+    "main.css": "/margIN/static/css/main.260b4c9e.css",
+    "main.js": "/margIN/static/js/main.6056070b.js",
+    "index.html": "/margIN/index.html",
+    "main.260b4c9e.css.map": "/margIN/static/css/main.260b4c9e.css.map",
+    "main.6056070b.js.map": "/margIN/static/js/main.6056070b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.260b4c9e.css",
+    "static/js/main.6056070b.js"
+  ]
+}

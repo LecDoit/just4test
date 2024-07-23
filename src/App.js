@@ -1,3 +1,48 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:67371d9cd21adf75cc1e7a483478eefb228678139a9c56a2ad7fd0827ce087b6
-size 1031
+import React,{useEffect,useState,useCallback} from 'react';
+import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
+import './App.css';
+
+// import { useStocksContext } from "./hooks/useStocksContext";
+import { useAuthContext } from './hooks/useAuthContext';
+
+import Home from './pages/Home'
+import Hero from './pages/Hero'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Navbar from './components/Navbar'
+
+
+
+function App() {
+  // const {stocks,dispatch} = useStocksContext()
+  const {user} = useAuthContext()
+
+
+
+  return (
+    <div>
+      <BrowserRouter>
+      {/* <Navbar/> */}
+      <div>
+        <Routes>
+          <Route path='/' 
+          element={user ? <Home /> : <Hero />}/>
+
+          
+          <Route path='/login' 
+          element={!user ? <Login /> : <Navigate to='/'/>}/>
+
+          <Route path='/signup' 
+          element={!user ? <Signup /> : <Navigate to='/'/> }/>
+
+
+        </Routes>
+      </div>
+      </BrowserRouter>
+
+      
+    </div>
+  );
+}
+
+export default App;
